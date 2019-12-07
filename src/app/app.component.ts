@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,13 @@ export class AppComponent {
   title = 'wings-of-bharat';
 
   birdSanctuarySelection = new FormControl('');
+  showInfoBox: boolean;
+
   selectSanctuary() {
-    console.log(this.birdSanctuarySelection);
+
+    console.log(this.birdSanctuarySelection.value);
+    this.showInfoBox = true;
+
+
   }
 }

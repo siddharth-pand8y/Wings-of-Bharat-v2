@@ -1,14 +1,7 @@
 <body>
   <header>
     <img src="assets/logo/logo.png" />
-    <form id="filter-form" class="filter-form">
-      <input
-        id="filter-input"
-        class="filter-input"
-        placeholder="Search Bird Sanctuaries"
-      />
-      <button type="submit">X</button>
-    </form>
+
     <!-- <input id="searchSacturies" placeholder="Search Bird Sanctuaries" /> -->
   </header>
   <main>
@@ -16,70 +9,46 @@
       <h1>
         Bird Sanctuaries
       </h1>
+      <form id="filter-form" class="filter-form">
+          <input id="filter-input" class="filter-input" placeholder="Search Bird Sanctuaries" />
+          <button type="submit">X</button>
+        </form>
       <ul>
-        <li>
-          <input
-            type="radio"
-            value="Keoladeo"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Keoladeo National Park />
+        <li><label>
+            <input type="radio" value="Keoladeo" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Keoladeo National Park</label>
+        </li>
+        <li><label>
+            <input type="radio" value="Sultanpur" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Sultanpur Bird Sanctuaru</label>
+        </li>
+        <li><label>
+            <input type="radio" value="Salim" (change)="selectSanctuary()" [formControl]="birdSanctuarySelection" />Salim
+            Ali Bird Sanctuary </label>
+        </li>
+        <li><label>
+            <input type="radio" value="Kumarakom" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Kumarakom Bird Sanctuary</label>
         </li>
         <li>
-          <input
-            type="radio"
-            value="Sultanpur"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Sultanpur Bird Sanctuaru />
+          <label>
+            <input type="radio" value="Vendanthangal" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Vendanthangal Bird Sanctuary</label>
         </li>
         <li>
-          <input
-            type="radio"
-            value="Salim"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Salim Ali Bird Sanctuary />
+          <label>
+            <input type="radio" value="Chilika" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Chilika Lake Bird Sanctuary</label>
         </li>
         <li>
-          <input
-            type="radio"
-            value="Kumarakom"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Kumarakom Bird Sanctuary />
+          <label>
+            <input type="radio" value="Chintamani" (change)="selectSanctuary()"
+              [formControl]="birdSanctuarySelection" />Chintamani Kar Bird Sanctuary </label>
         </li>
         <li>
-          <input
-            type="radio"
-            value="Vendanthangal"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Vendanthangal Bird Sanctuary />
-        </li>
-        <li>
-          <input
-            type="radio"
-            value="Chilika"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Chilika Lake Bird Sanctuary />
-        </li>
-        <li>
-          <input
-            type="radio"
-            value="Chintamani"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Chintamani Kar Bird Sanctuary />
-        </li>
-        <li>
-          <input
-            type="radio"
-            value="Kutch"
-            (click)="selectSanctuary()"
-            [formControl]="birdSanctuarySelection"
-          />Kutch Great Indian Bustard Sanctuary />
+          <label>
+            <input type="radio" value="Kutch" (change)="selectSanctuary()" [formControl]="birdSanctuarySelection" />Kutch
+            Great Indian Bustard Sanctuary</label>
         </li>
       </ul>
     </section>
