@@ -179,20 +179,36 @@ body {
     top: 10px;
     left: 10px;
     box-shadow: 6px 6px 13px #00000015;
+    z-index: 1000;
     img {
       height: 50px;
       margin: 5px 3vw;
     }
+
+
     
+  }
+  main {
+    display: grid;
+    // grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
+
+    // grid-auto-flow: row;
+
+    height: 100vh;
+
   }
 }
 
 .listSection {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
+  // position: fixed;
+  // bottom: 15px;
+  // left: 15px;
+  // right: 15px;
   padding: 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   max-width: 450px;
   background: #0f1e64;
   color: #ffffff;
@@ -207,6 +223,7 @@ body {
   }
 
   form {
+    background: #23297a;
     border: 1px solid #ffff00;
     margin: 10px;
     background: #ffffff00;
@@ -215,7 +232,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 30px;
+    height: 40px;
     /* width: 75%; */
 
     input {
@@ -255,13 +272,17 @@ body {
 
   ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
     // width: calc(100% - 4vh);
     margin: 10px 20px;
     li {
       font-family: "Quicksand";
       font-size: 13px;
       // margin: 20px auto;
-      margin: 20px auto;
+      // margin: 20px auto;
       label {
         input {
         display: none;

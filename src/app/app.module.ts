@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -12,6 +14,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleAPIKey
+    }),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
