@@ -1,28 +1,29 @@
-# WingsOfBharat
+# Wings Of Bharat
 
-Wings of Bharat is angular project which list down the different bird sanctuaries present in India
+This is a a single-page application using Angular featuring a map of prominent of Bird Sanctuaries of India.The app has map markers to identify the sanctuaries, a search function to easily discover these locations, and a list view to support simple browsing of all locations. The project also utilizes Service Workers for offline access.
+
+The application uses Google Maps JavaScript API to generate maps & Wikipedia API to fetch the information regarding the Bird Sanctuaries.
 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## API used:
 
-## Code scaffolding
+- Google Maps JavaScript API
+- Wikipedia Opensearch API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## License
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+This project is licensed under the **Mozilla Public License 2.0**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- All the information provided in the app is made available by the third party API - Wikipedia. I do not hold any responsibility or liability for the content.
+- The logo of Colors of Bharat is created by me. The png of logo used is created by me. (Original Fonts utilized in making – Baron Neue, Ananda Namaste) .
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Author
+
+Siddharth Pandey
