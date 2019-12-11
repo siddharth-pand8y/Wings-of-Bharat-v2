@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-import { from } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,28 +10,32 @@ import { from } from 'rxjs';
 })
 export class AppComponent {
   title = 'wings-of-bharat';
-
   birdSanctuarySelection = new FormControl('');
   showInfoBox: boolean;
+  listState: boolean;
+  sactuaryDetail = {};
+
+  constructor(private http: HttpClient) {
+  }
+
+  ngOnInit() {
+    this.listState = true;
+  }
 
   selectSanctuary() {
-
-    console.log(this.birdSanctuarySelection.value);
     this.showInfoBox = true;
-    const data = from(fetch(environment.wikipeadiaAPI + this.birdSanctuarySelection.value, {
-      method: 'GET',
-      mode: 'cors'
-    }));
-    data.subscribe({
-      next(response) { 
-        console.log(response);
-        response.json().then((prayer)=> {
-          console.log(Object.values(prayer.query.pages)[0])
-        })
-      },
-      error(err) { console.error('Error: ' + err); },
-      complete() { console.log('Completed'); }
+    this.getSanctuaryDetails().subscribe((data) => {
+      console.log(data);
     });
-
   }
+
+  getSanctuaryDetails() {
+    return this.http.get(environment.wikipeadiaAPI + this.birdSanctuarySelection.value);
+  }
+
+
+  collapseList() {
+    this.listState = !this.listState;
+  }
+
 }
