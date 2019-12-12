@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { WikipediaService } from './core/wikipedia/wikipedia.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent {
   listState: boolean;
   sactuaryDetail = {};
 
-  constructor(private http: HttpClient) {
+  constructor(private wikipediaService: WikipediaService) {
   }
 
   ngOnInit() {
@@ -24,15 +23,10 @@ export class AppComponent {
 
   selectSanctuary() {
     this.showInfoBox = true;
-    this.getSanctuaryDetails().subscribe((data) => {
+    this.wikipediaService.getSanctuaryDetails(this.birdSanctuarySelection.value).subscribe((data) => {
       console.log(data);
     });
   }
-
-  getSanctuaryDetails() {
-    return this.http.get(environment.wikipeadiaAPI + this.birdSanctuarySelection.value);
-  }
-
 
   collapseList() {
     this.listState = !this.listState;
