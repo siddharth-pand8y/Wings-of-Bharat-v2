@@ -164,6 +164,16 @@ select {
   vertical-align: middle;
 }
 
+
+/* --------------------------------------------------------------------------------- */
+/* --------------------------- END OF RESET CSS ------------------------------------ */
+/* --------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------- */
+/* --------------------------- START OF MOBILE CSS --------------------------------- */
+/* --------------------------------------------------------------------------------- */
+
 body {
   height: 100%;
   width: 100%;
@@ -172,6 +182,7 @@ body {
     background: #0f1e64;
     border-bottom: 1px solid #2144c0;
     display: grid;
+    transition: 0.3s ease;
     // grid-template-columns: 1fr 1fr;
     width: fit-content;
     position: fixed;
@@ -190,100 +201,145 @@ body {
   }
   main {
     display: grid;
+    transition: 0.3s ease;
     grid-template-rows: 1fr auto;
-    // grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
-    // grid-auto-flow: row;
     height: 100vh;
+
+    section {
+      .collapseListButton {
+        height: 50px;
+        width: 50px;
+        background: #ffff00;
+        position: relative;
+        top: 0;
+        right: 0;
+        grid-row: 1/2;
+        margin: -40px auto 25px auto;
+        border-radius: 25px;
+        filter: blur(20px); 
+        display: grid;
+        justify-content: center;
+        div {
+          display: grid;
+          justify-content: center;
+          img {
+            height: 30px;
+            width: 30px;
+            z-index: 1000;  
+          }
+        }
+      }
+    }
   }
 }
 
 .listSection {
-  // position: fixed;
-  // bottom: 15px;
-  // left: 15px;
-  // right: 15px;
   padding: 15px;
   bottom: 0;
   left: 0;
   right: 0;
   max-width: 450px;
-  background: #0f1e64;
+  background: #142270;
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 12px #00000016;
-  // color: #ffff00;
-  h1 {
-    font-family: "Playfair Display";
-    border-bottom: 1px solid #00ffff;
-    font-size: 21px;
-    line-height: 35px;
-  }
+  transition: all ease-in 0.4s;
+  height: fit-content;
+  div {
 
-  form {
-    background: #23297a;
-    border: 1px solid #ffff00;
-    margin: 10px;
-    background: #ffffff00;
-    border-radius: 5px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 40px;
-    /* width: 75%; */
-
-    input {
+    h1 {
+      font-family: "Playfair Display";
+      border-bottom: 1px solid #00ffff;
+      font-size: 21px;
+      line-height: 35px;
+    }
+  
+    form {
+      background: #23297a;
+      border: 1px solid #ffff00;
+      margin: 10px;
       background: #ffffff00;
-      border: none;
-      font-family: "Quicksand";
-      color: #ffff00;
-      font-size: 12px;
-      font-weight:  500;
-      letter-spacing: 1px;
-      width: 100%;
-      &:focus {
+      border-radius: 5px;
+      padding: 0 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 40px;
+      /* width: 75%; */
+  
+      input {
+        background: #ffffff00;
         border: none;
-        outline: none;
+        font-family: "Quicksand";
+        color: #ffff00;
+        font-size: 12px;
+        font-weight:  500;
+        letter-spacing: 1px;
+        width: 100%;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        &::placeholder {
+          color: #ffff0090;
+        }
       }
-      &::placeholder {
-        color: #ffff0090;
+      button {
+        background: #ffffff00;
+        border: 0;
+        outline: 0;
+        padding: 0;
+        transition: all 200ms ease-in;
+        cursor: pointer;
+        /* margin: auto; */
+        color: #ffff00;
+        font-family: 'Poppins';
+        font-weight: 900;
+        z-index: 99;
+        text-align: right;
+        // width: 2vw;
+        margin: 0;
       }
     }
-    button {
-      background: #ffffff00;
-      border: 0;
-      outline: 0;
-      padding: 0;
-      transition: all 200ms ease-in;
-      cursor: pointer;
-      /* margin: auto; */
-      color: #ffff00;
-      font-family: 'Poppins';
-      font-weight: 900;
-      z-index: 99;
-      text-align: right;
-      // width: 2vw;
-      margin: 0;
+  
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 80%;
+      margin: 10px 20px;
+      transition: all ease-in 0.4s;
+      li {
+        font-family: "Quicksand";
+        font-size: 13px;
+        margin: 10px auto 10px 0;
+        label {
+          input {
+          display: none;
+        }
+      }
+  
+      }
     }
   }
 
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 80%;
-    margin: 10px 20px;
-    li {
-      font-family: "Quicksand";
-      font-size: 13px;
-      margin: 10px auto 10px 0;
-      label {
-        input {
-        display: none;
-      }
-    }
+}
 
-    }
+
+.hideList {
+
+  animation: shrink 3s ease-in-out infinite alternate;  // height: 0 !important;
+  margin: 0;
+  li {
+    display: none;
+    margin: 0 !important;
+  }
+}
+
+
+@keyframes shrink{
+  to{
+    height: 0px;
   }
 }
