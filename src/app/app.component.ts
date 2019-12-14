@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WikipediaService } from './core/wikipedia/wikipedia.service';
+import { TimelineMax } from 'gsap';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,14 @@ export class AppComponent {
   showInfoBox: boolean;
   listState: boolean;
   sactuaryDetail = {};
+  animation = new TimelineMax({ paused: true, reversed: true });
 
   constructor(private wikipediaService: WikipediaService) {
   }
 
   ngOnInit() {
     this.listState = true;
+    this.ListDropdownAnimation()
   }
 
   selectSanctuary() {
@@ -28,8 +31,12 @@ export class AppComponent {
     });
   }
 
-  collapseList() {
-    this.listState = !this.listState;
+  ListDropdownAnimation() {
+    this.animation.to(".sactuary-list-item", .5, { x: '-100vw', ease: "Expo.easeInOut" }, 0);
   }
 
+  collapseList() {
+    this.animation.reversed() ? this.animation.play() : this.animation.reverse();
+    this.listState = !this.listState;
+  }
 }

@@ -7,7 +7,7 @@
     <agm-map [latitude]="20.593684" [longitude]="78.96288" [zoom]="4" style="height: 100%; width: 100%;"></agm-map>
 
     <section class="listSection">
-      <div>
+      <div id="listSectionDiv">
         <div class="collapseListButton" attr.aria-expanded="{{this.listState === true? expanded: collapsed}}"
           aria-label="Main menu" role="button" tabindex="0" (click)="collapseList()">
           <div>
@@ -20,39 +20,39 @@
           <button type="submit">X</button>
         </form>
         <ul [ngClass]="{'hideList': listState === false}">
-          <li><label>
+          <li class="sactuary-list-item"><label>
               <input type="radio" value="Keoladeo National Park" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Keoladeo National Park</label>
           </li>
-          <li><label>
+          <li class="sactuary-list-item"><label>
               <input type="radio" value="Sultanpur National Park" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Sultanpur Bird Sanctuaru</label>
           </li>
-          <li><label>
+          <li class="sactuary-list-item"><label>
               <input type="radio" value="Salim Ali Bird Sanctuary" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Salim
               Ali Bird Sanctuary </label>
           </li>
-          <li><label>
+          <li class="sactuary-list-item"><label>
               <input type="radio" value="Kumarakom Bird Sanctuary" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Kumarakom Bird Sanctuary</label>
           </li>
-          <li>
+          <li class="sactuary-list-item">
             <label>
               <input type="radio" value="Vedanthangal Bird Sanctuary" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Vendanthangal Bird Sanctuary</label>
           </li>
-          <li>
+          <li class="sactuary-list-item">
             <label>
               <input type="radio" value="Chilika Lake" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Chilika Lake Bird Sanctuary</label>
           </li>
-          <li>
+          <li class="sactuary-list-item">
             <label>
               <input type="radio" value="Chintamoni Kar Bird Sanctuary" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Chintamani Kar Bird Sanctuary </label>
           </li>
-          <li>
+          <li class="sactuary-list-item">
             <label>
               <input type="radio" value="Kutch Bustard Sanctuary" (change)="selectSanctuary()"
                 [formControl]="birdSanctuarySelection" />Kutch
