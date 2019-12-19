@@ -9,6 +9,14 @@
       [longitude]="78.96288"
       [zoom]="4"
       style="height: 100%; width: 100%;"
+    >
+      <agm-marker
+        *ngFor="let marker of locations"
+        [latitude]="marker.position.lat"
+        [longitude]="marker.position.lng"
+        (markerClick)="clickMarker(marker.title)"
+      >
+      </agm-marker
     ></agm-map>
 
     <section class="listSection">
