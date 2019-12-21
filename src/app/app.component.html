@@ -22,7 +22,7 @@
 
     <section class="listSection">
       <div id="listSectionDiv">
-        <div
+        <button
           class="collapseListButton"
           attr.aria-expanded="{{
             this.listState === true ? expanded : collapsed
@@ -33,7 +33,6 @@
           (click)="collapseList()"
         >
           <div>
-            <!-- <img src="assets/images/arrow.png" alt=""> -->
             <svg
               id="Group_5"
               data-name="Group 5"
@@ -299,7 +298,7 @@
               />
             </svg>
           </div>
-        </div>
+        </button>
 
         <form id="filter-form" class="filter-form">
           <input
