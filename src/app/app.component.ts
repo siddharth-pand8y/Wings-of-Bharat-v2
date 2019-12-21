@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   listState: boolean;
   sactuaryDetail = {};
   animation = new TimelineMax({ paused: true, reversed: true });
-  dropdownStatus: boolean;
   public birdSanctuaryList: {
     key: string,
     title: string,
@@ -34,7 +33,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.listState = true;
-    this.dropdownStatus = false;
     this.ListDropdownAnimation();
   }
 
@@ -66,6 +64,5 @@ export class AppComponent implements OnInit {
       ? this.animation.play()
       : this.animation.reverse();
     this.listState = !this.listState;
-    this.dropdownStatus = !this.dropdownStatus;
   }
 }
