@@ -164,11 +164,9 @@ select {
   vertical-align: middle;
 }
 
-
 /* --------------------------------------------------------------------------------- */
 /* --------------------------- END OF RESET CSS ------------------------------------ */
 /* --------------------------------------------------------------------------------- */
-
 
 /* --------------------------------------------------------------------------------- */
 /* --------------------------- START OF MOBILE CSS --------------------------------- */
@@ -195,9 +193,6 @@ body {
       height: 50px;
       margin: 5px 3vw;
     }
-
-
-    
   }
   main {
     display: grid;
@@ -206,6 +201,8 @@ body {
     height: 100vh;
 
     section {
+      margin-top: -22px;
+      z-index: 100;
       .collapseListButton {
         height: 60px;
         width: 60px;
@@ -216,7 +213,7 @@ body {
         grid-row: 1/2;
         margin: -40px auto 18px auto;
         border-radius: 30px;
-        // filter: blur(20px); 
+        // filter: blur(20px);
         display: grid;
         justify-content: center;
         align-items: center;
@@ -226,7 +223,7 @@ body {
           img {
             height: 30px;
             width: 30px;
-            z-index: 1000;  
+            z-index: 1000;
           }
           svg {
             // height: 25px;
@@ -252,14 +249,13 @@ body {
   transition: all ease-in 0.4s;
   height: fit-content;
   div {
-
     h1 {
       font-family: "Playfair Display";
       border-bottom: 1px solid #00ffff;
       font-size: 21px;
       line-height: 35px;
     }
-  
+
     form {
       background: #23297a;
       border: 1px solid #ffff00;
@@ -272,14 +268,14 @@ body {
       justify-content: space-between;
       height: 40px;
       /* width: 75%; */
-  
+
       input {
         background: #ffffff00;
         border: none;
         font-family: "Quicksand";
         color: #ffff00;
         font-size: 12px;
-        font-weight:  500;
+        font-weight: 500;
         letter-spacing: 1px;
         width: 100%;
         &:focus {
@@ -299,7 +295,7 @@ body {
         cursor: pointer;
         /* margin: auto; */
         color: #ffff00;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 900;
         z-index: 99;
         text-align: right;
@@ -307,7 +303,7 @@ body {
         margin: 0;
       }
     }
-  
+
     ul {
       list-style: none;
       display: flex;
@@ -322,20 +318,16 @@ body {
         margin: 10px auto 10px 0;
         label {
           input {
-          display: none;
+            display: none;
+          }
         }
-      }
-  
       }
     }
   }
-
 }
 
-
 .hideList {
-
-  animation: shrink 3s ease-in-out infinite alternate;  // height: 0 !important;
+  animation: shrink 3s ease-in-out infinite alternate; // height: 0 !important;
   margin: 0;
   li {
     display: none;
@@ -467,9 +459,6 @@ body {
 //   transition: 0.2s ease-in;
 // }
 
-
 .svggroups1 {
   transform: rotate(180deg);
 }
-
-
