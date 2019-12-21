@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  wikipeadiaAPI: 'https://en.wikipedia.org/w/api.php?&origin=*&format=json&action=query&prop=extracts&exintro=&explaintext=&titles=',
+  wikipeadiaAPI: 'https://en.wikipedia.org/w/api.php?&origin=*&format=json&action=query&prop=extracts|pageimages|images&exintro=&explaintext=&titles=',
   googleAPIKey: 'API_KEY'
 };
 
