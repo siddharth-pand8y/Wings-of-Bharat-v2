@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { WikipediaService } from './core/wikipedia/wikipedia.service';
 import { TimelineMax } from 'gsap';
 import SanctuaryList from './../assets/json/location.json';
+import style from './../assets/json/map-style.json';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
     }
   } = SanctuaryList;
 
+  public mapStyle: [] = style;
 
   constructor(private wikipediaService: WikipediaService) {}
 
