@@ -3,11 +3,10 @@
     <img src="assets/logo/logo.png" />
   </header>
   <main>
-    <!-- <div #map style="width:100%;height:400px"></div> -->
     <agm-map
-      [latitude]="20.593684"
-      [longitude]="78.96288"
-      [zoom]="4"
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [zoom]="zoom"
       [styles]="mapStyle"
       style="height: 100%; width: 100%;"
     >
@@ -27,12 +26,12 @@
       </agm-marker
     ></agm-map> -->
 
-    <agm-marker
-        *ngFor="let marker of birdSanctuaryList"
+      <agm-marker
+        *ngFor="let marker of birdSanctuaryList; let i = index"
         [latitude]="marker.position.lat"
         [longitude]="marker.position.lng"
         iconUrl="./assets/images/marker-yellow.png"
-        (markerClick)="clickMarker(marker.title)"
+        (markerClick)="clickMarker(marker)"
       >
       </agm-marker
     ></agm-map>
@@ -326,84 +325,17 @@
           <button type="submit">X</button>
         </form>
         <ul [ngClass]="{ hideList: listState === false }">
-          <li class="sactuary-list-item">
+          <li
+            class="sactuary-list-item"
+            *ngFor="let sanct of birdSanctuaryList"
+          >
             <label>
               <input
                 type="radio"
-                value="Keoladeo National Park"
-                (change)="selectSanctuary()"
+                value="sanct.title"
+                (click)="selectSanctuary(sanct)"
                 [formControl]="birdSanctuarySelection"
-              />Keoladeo National Park</label
-            >
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Sultanpur National Park"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Sultanpur Bird Sanctuaru</label
-            >
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Salim Ali Bird Sanctuary"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Salim Ali Bird Sanctuary
-            </label>
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Kumarakom Bird Sanctuary"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Kumarakom Bird Sanctuary</label
-            >
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Vedanthangal Bird Sanctuary"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Vendanthangal Bird Sanctuary</label
-            >
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Chilika Lake"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Chilika Lake Bird Sanctuary</label
-            >
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Chintamoni Kar Bird Sanctuary"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Chintamani Kar Bird Sanctuary
-            </label>
-          </li>
-          <li class="sactuary-list-item">
-            <label>
-              <input
-                type="radio"
-                value="Kutch Bustard Sanctuary"
-                (change)="selectSanctuary()"
-                [formControl]="birdSanctuarySelection"
-              />Kutch Great Indian Bustard Sanctuary</label
+              />{{ sanct.name }}</label
             >
           </li>
         </ul>

@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
   listState: boolean;
   sactuaryDetail = {};
   animation = new TimelineMax({ paused: true, reversed: true });
+  latitude: number;
+  longitude: number;
+  zoom: number;
+
   public birdSanctuaryList: {
     key: string,
     title: string,
@@ -34,9 +38,24 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.listState = true;
     this.ListDropdownAnimation();
+    this.resetMap();
   }
 
-  selectSanctuary() {
+  resetMap() {
+    this.latitude = 20.593684;
+    this.longitude = 78.96288;
+    this.zoom = 4;
+  }
+
+  clickMarker(marker) {
+    this.birdSanctuarySelection.setValue(marker.title);
+    this.selectSanctuary(marker);
+  }
+
+  selectSanctuary(sanctuary) {
+    this.latitude = sanctuary.position.lat;
+    this.longitude = sanctuary.position.lng;
+    this.zoom = 7;
     this.showInfoBox = true;
     this.wikipediaService
       .getSanctuaryDetails(this.birdSanctuarySelection.value)
@@ -45,10 +64,6 @@ export class AppComponent implements OnInit {
       });
   }
 
-  clickMarker(sanctuary) {
-    this.birdSanctuarySelection.setValue(sanctuary);
-    this.selectSanctuary();
-  }
 
   ListDropdownAnimation() {
     this.animation.to(
@@ -60,6 +75,7 @@ export class AppComponent implements OnInit {
   }
 
   collapseList() {
+    this.resetMap();
     this.animation.reversed()
       ? this.animation.play()
       : this.animation.reverse();
