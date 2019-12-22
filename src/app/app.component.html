@@ -11,10 +11,27 @@
       [styles]="mapStyle"
       style="height: 100%; width: 100%;"
     >
-      <agm-marker
+      <!-- <agm-marker
         *ngFor="let marker of birdSanctuaryList"
         [latitude]="marker.position.lat"
         [longitude]="marker.position.lng"
+        [iconUrl]="{
+          url: './assets/images/marker.png',
+          scaledSize: {
+            width: 40,
+            height: 40
+          }
+        }"
+        (markerClick)="clickMarker(marker.title)"
+      >
+      </agm-marker
+    ></agm-map> -->
+
+    <agm-marker
+        *ngFor="let marker of birdSanctuaryList"
+        [latitude]="marker.position.lat"
+        [longitude]="marker.position.lng"
+        iconUrl="./assets/images/marker-yellow.png"
         (markerClick)="clickMarker(marker.title)"
       >
       </agm-marker
