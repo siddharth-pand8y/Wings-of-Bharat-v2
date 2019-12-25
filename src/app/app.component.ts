@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WikipediaService } from './core/wikipedia/wikipedia.service';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, TimelineLite } from 'gsap';
 import SanctuaryList from './../assets/json/location.json';
-import style from './../assets/json/map-style.json';
+import style from './../assets/json/map-style-3.json';
 
 @Component({
   selector: 'app-root',
@@ -17,18 +17,19 @@ export class AppComponent implements OnInit {
   listState: boolean;
   sactuaryDetail = {};
   animation = new TimelineMax({ paused: true, reversed: true });
+  ListItemAnimation = new TimelineLite();
   latitude: number;
   longitude: number;
   zoom: number;
 
   public birdSanctuaryList: {
-    key: string,
-    title: string,
-    name: string,
+    key: string;
+    title: string;
+    name: string;
     position: {
-      lat: string,
-      lng: string
-    }
+      lat: string;
+      lng: string;
+    };
   } = SanctuaryList;
 
   public mapStyle: [] = style;
@@ -64,18 +65,20 @@ export class AppComponent implements OnInit {
       });
   }
 
-
   ListDropdownAnimation() {
     this.animation.to(
-      '.sactuary-list-item',
-      0.5,
+      '#seactuaryUnorderedList',
+      0.1,
       { x: '-100vw', ease: 'Expo.easeInOut' },
       0
     );
   }
 
   collapseList() {
-    this.resetMap();
+    this.ListDropdownAnimation();
+    if (this.listState === true) {
+      this.resetMap();
+    }
     this.animation.reversed()
       ? this.animation.play()
       : this.animation.reverse();
