@@ -1,164 +1,143 @@
 [
   {
-    "featureType": "administrative",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#444444"
-      }
-    ]
+      "featureType": "administrative.province",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "on"
+          }
+      ]
   },
   {
-    "featureType": "administrative.country",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#142270"
-      }
-    ]
+      "featureType": "administrative.locality",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "on"
+          },
+          {
+              "weight": "0.96"
+          },
+          {
+              "lightness": "44"
+          }
+      ]
   },
   {
-    "featureType": "administrative.province",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#5a649a"
-      },
-      {
-        "lightness": "64"
-      }
-    ]
+      "featureType": "administrative.locality",
+      "elementType": "labels",
+      "stylers": [
+          {
+              "visibility": "on"
+          }
+      ]
   },
   {
-    "featureType": "landscape",
-    "elementType": "all",
-    "stylers": [
-      {
-        "color": "#f2f2f2"
-      }
-    ]
+      "featureType": "administrative.locality",
+      "elementType": "labels.text",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "poi",
-    "elementType": "all",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "administrative.neighborhood",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "administrative.land_parcel",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "poi",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "poi",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "on"
+          }
+      ]
   },
   {
-    "featureType": "road",
-    "elementType": "all",
-    "stylers": [
-      {
-        "saturation": -100
-      },
-      {
-        "lightness": 45
-      }
-    ]
+      "featureType": "poi.business",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "poi.government",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "road",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "poi.medical",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "road.highway",
-    "elementType": "all",
-    "stylers": [
-      {
-        "visibility": "simplified"
-      }
-    ]
+      "featureType": "poi.place_of_worship",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "road.arterial",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "poi.school",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "transit",
-    "elementType": "all",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "poi.sports_complex",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "transit",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
+      "featureType": "transit",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
   },
   {
-    "featureType": "transit",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "all",
-    "stylers": [
-      {
-        "color": "#cbcbcb"
-      },
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#ddf3fe"
-      }
-    ]
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+          {
+              "color": "#99e5ff"
+          }
+      ]
   }
 ]
