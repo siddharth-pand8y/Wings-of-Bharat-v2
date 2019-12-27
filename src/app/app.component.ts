@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
+  selectedSanctuary: string;
 
   public birdSanctuaryList: {
     key: string;
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit {
     this.longitude = sanctuary.position.lng;
     this.zoom = 7;
     this.showInfoBox = true;
+    this.selectedSanctuary = sanctuary.title;
     this.wikipediaService
       .getSanctuaryDetails(this.birdSanctuarySelection.value)
       .subscribe(data => {
@@ -69,7 +71,7 @@ export class AppComponent implements OnInit {
     this.animation.to(
       '#seactuaryUnorderedList',
       0.1,
-      { x: '-100vw', ease: 'Expo.easeInOut' },
+      { x: '-100vw', opacity: 0, ease: 'Expo.easeInOut' },
       0
     );
   }
