@@ -36,9 +36,13 @@
       </agm-marker
     ></agm-map>
 
-    <section class="listSection">
-      <div id="listSectionDiv">
+    <section
+      class="listSection"
+      [ngClass]="{ hideListSection: showInfoBox === true }"
+    >
+      <div id="listSectionDiv" [ngClass]="{ hideList: showInfoBox === true }">
         <button
+          [ngClass]="{ hideDropdownButton: showInfoBox === true }"
           class="collapseListButton"
           attr.aria-expanded="{{
             this.listState === true ? expanded : collapsed
@@ -316,7 +320,11 @@
           </div>
         </button>
 
-        <form id="filter-form" class="filter-form">
+        <form
+          id="filter-form"
+          class="filter-form"
+          [ngClass]="{ hideForm: showInfoBox === true }"
+        >
           <input
             id="filter-input"
             class="filter-input"
@@ -324,25 +332,37 @@
           />
           <button type="submit">X</button>
         </form>
-        <ul [ngClass]="{ hideList: listState === false }" id="seactuaryUnorderedList">
+        <ul
+          [ngClass]="{ hideList: listState === false }"
+          id="seactuaryUnorderedList"
+        >
           <li
             class="sactuary-list-item"
-            *ngFor="let sanct of birdSanctuaryList"
+            *ngFor="let sanct of birdSanctuaryList; let i = index"
           >
             <label>
               <input
                 type="radio"
-                value="sanct.title"
-                (click)="selectSanctuary(sanct)"
+                id="primary1Id{{ i }}"
+                value="{{ sanct.title }}"
                 [formControl]="birdSanctuarySelection"
+                (click)="selectSanctuary(sanct)"
               />{{ sanct.name }}</label
             >
           </li>
         </ul>
       </div>
-      <aside>
-        {{selectedSanctuary}}
-      </aside>
+      <div *ngIf="showInfoBox === true">
+        <button type="button" (click)="showList()">BACK</button>
+        <h1>{{ selectedSanctuary.title }}</h1>
+        <h2>{{ selectedSanctuary.key }}, India</h2>
+        <figure>
+          <img src="" alt="" />
+        </figure>
+        <article>
+          {{ apiData[0].extract }}
+        </article>
+      </div>
     </section>
   </main>
 </body>

@@ -21,7 +21,15 @@ export class AppComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
-  selectedSanctuary: string;
+  selectedSanctuary: {
+    key: string;
+    title: string;
+    name: string;
+    position: {
+      lat: string;
+      lng: string;
+    };
+  };
 
   public birdSanctuaryList: {
     key: string;
@@ -34,6 +42,12 @@ export class AppComponent implements OnInit {
   } = SanctuaryList;
 
   public mapStyle: [] = style;
+
+  apiData = [
+    {
+      extract: ''
+    }
+  ];
 
   constructor(private wikipediaService: WikipediaService) {}
 
@@ -50,6 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   clickMarker(marker) {
+    console.log(marker);
     this.birdSanctuarySelection.setValue(marker.title);
     this.selectSanctuary(marker);
   }
@@ -59,11 +74,14 @@ export class AppComponent implements OnInit {
     this.longitude = sanctuary.position.lng;
     this.zoom = 7;
     this.showInfoBox = true;
-    this.selectedSanctuary = sanctuary.title;
+    this.selectedSanctuary = sanctuary;
+    this.hideList();
+    console.log(this.birdSanctuarySelection.value);
     this.wikipediaService
-      .getSanctuaryDetails(this.birdSanctuarySelection.value)
+      .getSanctuaryDetails(sanctuary.title)
       .subscribe(data => {
-        console.log(data);
+        this.apiData = Object.values(data.query.pages);
+        console.log(this.apiData[0].extract, this.birdSanctuarySelection.value);
       });
   }
 
@@ -85,5 +103,18 @@ export class AppComponent implements OnInit {
       ? this.animation.play()
       : this.animation.reverse();
     this.listState = !this.listState;
+  }
+
+  hideList() {
+    // this.ListDropdownAnimation();
+    this.animation.reversed()
+      ? this.animation.play()
+      : this.animation.reverse();
+  }
+
+  showList() {
+    this.animation.reversed()
+      ? this.animation.play()
+      : this.animation.reverse();
   }
 }
