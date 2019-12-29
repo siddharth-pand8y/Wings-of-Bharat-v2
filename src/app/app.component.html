@@ -352,7 +352,7 @@
           </li>
         </ul>
       </div>
-      <div *ngIf="showInfoBox === true">
+      <div *ngIf="showInfoBox === true" id="infoBox">
         <button type="button" (click)="showList()">BACK</button>
         <h1>{{ selectedSanctuary.title }}</h1>
         <h2>{{ selectedSanctuary.key }}, India</h2>
@@ -360,7 +360,7 @@
           <img src="" alt="" />
         </figure>
         <article>
-          {{ apiData[0].extract }}
+          {{ SanctuaryAPIData[0].extract }}
         </article>
       </div>
     </section>

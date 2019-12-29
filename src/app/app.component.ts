@@ -43,11 +43,13 @@ export class AppComponent implements OnInit {
 
   public mapStyle: [] = style;
 
-  apiData = [
-    {
-      extract: ''
+  apiData: any = {
+    query: {
+      pages: {}
     }
-  ];
+  };
+
+  SanctuaryAPIData: any = [{}];
 
   constructor(private wikipediaService: WikipediaService) {}
 
@@ -80,8 +82,8 @@ export class AppComponent implements OnInit {
     this.wikipediaService
       .getSanctuaryDetails(sanctuary.title)
       .subscribe(data => {
-        this.apiData = Object.values(data.query.pages);
-        console.log(this.apiData[0].extract, this.birdSanctuarySelection.value);
+        this.apiData = data;
+        this.SanctuaryAPIData = Object.values(this.apiData.query.pages);
       });
   }
 
@@ -113,6 +115,9 @@ export class AppComponent implements OnInit {
   }
 
   showList() {
+    this.resetMap();
+    this.listState = true;
+    this.showInfoBox = false;
     this.animation.reversed()
       ? this.animation.play()
       : this.animation.reverse();

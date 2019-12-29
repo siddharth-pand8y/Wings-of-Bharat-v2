@@ -203,6 +203,7 @@ body {
     section {
       margin-top: -22px;
       z-index: 100;
+      transition: all 0.2s ease-in;
       .collapseListButton {
         height: 60px;
         width: 60px;
@@ -345,3 +346,40 @@ body {
 .svggroupd1 {
   transform: rotate(180deg);
 }
+
+#infoBox {
+  button {
+    padding: 5px 13px;
+    background: #ffff00;
+    border: 0px;
+    border-radius: 4px;
+    outline: 0px;
+    box-shadow: 0 0 12px 0px #ffff0090;
+    font-family: Quicksand;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-family: "Playfair Display";
+    border-bottom: 4px solid #9FA8D2;
+    font-size: 21px;
+    line-height: 35px;
+    margin-right: -15px;
+  }
+  h2 {
+    font-family: Quicksand;
+    font-size: 15px;
+    margin-top: 7px;
+    font-weight: 500;
+  }
+  article {
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-size: 10px;
+    max-height: 30vh;
+    min-height: fit-content;
+    overflow-y: scroll;
+  }
+}
+
