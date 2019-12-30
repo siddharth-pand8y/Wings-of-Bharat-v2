@@ -359,9 +359,12 @@
         <figure>
           <img src="" alt="" />
         </figure>
-        <article>
+        <article *ngIf="wikipediaAPIStatus === 'Success'">
           {{ SanctuaryAPIData[0].extract }}
         </article>
+        <div class="LoadingDiv" *ngIf="wikipediaAPIStatus === 'Initiated'">
+          Loading ...
+        </div>
       </div>
     </section>
   </main>

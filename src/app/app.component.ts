@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
+  wikipediaAPIStatus: string;
   selectedSanctuary: {
     key: string;
     title: string;
@@ -79,11 +80,13 @@ export class AppComponent implements OnInit {
     this.selectedSanctuary = sanctuary;
     this.hideList();
     console.log(this.birdSanctuarySelection.value);
+    this.wikipediaAPIStatus = 'Initiated';
     this.wikipediaService
       .getSanctuaryDetails(sanctuary.title)
       .subscribe(data => {
         this.apiData = data;
         this.SanctuaryAPIData = Object.values(this.apiData.query.pages);
+        this.wikipediaAPIStatus = 'Success';
       });
   }
 
