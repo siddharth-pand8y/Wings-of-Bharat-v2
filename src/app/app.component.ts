@@ -3,7 +3,8 @@ import { FormControl } from '@angular/forms';
 import { WikipediaService } from './core/wikipedia/wikipedia.service';
 import { TimelineMax, TimelineLite } from 'gsap';
 import SanctuaryList from './../assets/json/location.json';
-import style from './../assets/json/map-style-3.json';
+import style from './../assets/json/map-style.json';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -52,7 +53,10 @@ export class AppComponent implements OnInit {
 
   SanctuaryAPIData: any = [{}];
 
-  constructor(private wikipediaService: WikipediaService) {}
+  constructor(
+    private wikipediaService: WikipediaService,
+    private pageTitle: Title
+  ) {}
 
   ngOnInit() {
     this.listState = true;
@@ -73,6 +77,7 @@ export class AppComponent implements OnInit {
   }
 
   selectSanctuary(sanctuary) {
+    this.pageTitle.setTitle('WOB: ' + sanctuary.name);
     this.latitude = sanctuary.position.lat;
     this.longitude = sanctuary.position.lng;
     this.zoom = 7;
@@ -119,6 +124,7 @@ export class AppComponent implements OnInit {
 
   showList() {
     this.resetMap();
+    this.pageTitle.setTitle('Wings of Bharat');
     this.listState = true;
     this.showInfoBox = false;
     this.animation.reversed()
