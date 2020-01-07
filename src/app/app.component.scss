@@ -220,7 +220,7 @@ body {
         outline: none;
         border: none;
         box-shadow: 0 6px 12px #ffff0070;
-
+        
         &:hover {
           transform: scale(1.1);
           transition: all 0.2s ease-in;
@@ -231,7 +231,7 @@ body {
           svg {
             // height: 25px;
             // width: 25px;
-            transition: all 0.2s ease-in;
+            transition: all 0.4s cubic-bezier(.29,.91,.52,.53);
           }
         }
       }
@@ -345,7 +345,7 @@ body {
 }
 
 .svggroupd1 {
-  transform: rotate(180deg);
+  transform: rotate3d(1, 0, 0, 180deg);
 }
 
 #infoBox {
