@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
       lat: string;
       lng: string;
     };
+    images: [];
   };
 
   public birdSanctuaryList: {
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
       lat: string;
       lng: string;
     };
+    images: [];
   } = SanctuaryList;
 
   public mapStyle: [] = style;

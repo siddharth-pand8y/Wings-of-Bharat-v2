@@ -46,7 +46,15 @@
     "position": {
       "lat": 12.54546,
       "lng": 79.856069
-    }
+    },
+    "images": [
+      ["Grey Pelican", "assets/images/Vendanthangal/Grey-Pelican.jpg"],
+      ["Large-Cormorant", "assets/images/Vendanthangal/Large-Cormorant.jpg"],
+      ["Darter", "assets/images/Vendanthangal/Darter.jpg"],
+      ["Grey-Heron", "assets/images/Vendanthangal/Grey-Heron.jpg"],
+      ["Large-Egret", "assets/images/Vendanthangal/Large-Egret.jpg"]
+
+    ]
   },
 
   {

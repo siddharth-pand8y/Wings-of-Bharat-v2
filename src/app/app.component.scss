@@ -220,7 +220,7 @@ body {
         outline: none;
         border: none;
         box-shadow: 0 6px 12px #ffff0070;
-        
+
         &:hover {
           transform: scale(1.1);
           transition: all 0.2s ease-in;
@@ -231,7 +231,7 @@ body {
           svg {
             // height: 25px;
             // width: 25px;
-            transition: all 0.4s cubic-bezier(.29,.91,.52,.53);
+            transition: all 0.4s cubic-bezier(0.29, 0.91, 0.52, 0.53);
           }
         }
       }
@@ -389,12 +389,29 @@ body {
     margin-top: 7px;
     font-weight: 500;
   }
+  figure {
+    width: calc(100vw - 30px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    // flex-direction: row;
+    // justify-content: flex-start;
+    margin: 15px 0;
+    height: 70px;
+    overflow-x: scroll;
+    img {
+      height: 100%;
+      width: 70px !important;
+      border-radius: 10px;
+      margin: 0 20px 0 0;
+      box-shadow: 0 0 12px #00000017;
+    }
+  }
   article {
     font-family: "Poppins";
     letter-spacing: 1px;
     line-height: 20px;
     font-size: 10px;
-    max-height: 30vh;
+    max-height: 23vh;
     min-height: fit-content;
     overflow-y: scroll;
     padding-right: 10px;
@@ -425,6 +442,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 3px;
+  height: 0px;
 }
 
 /* Track */
@@ -435,6 +453,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  height: 0px;
   width: 3px;
   background: #00ffff;
   border-radius: 1.5px;
