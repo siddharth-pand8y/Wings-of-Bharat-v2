@@ -6,7 +6,14 @@
     "position": {
       "lat": 27.203411,
       "lng": 77.506924
-    }
+    },
+    "images": [
+      ["Gadwall", "assets/images/Keoladeo/Gadwall.jpg"],
+      ["Heron", "assets/images/Keoladeo/Heron.jpg"],
+      ["Knob-Billed-Duck", "assets/images/Keoladeo/Knob-Billed-Duck.jpg"],
+      ["Stork", "assets/images/Keoladeo/Stork.jpg"],
+      ["Tufted-Duck", "assets/images/Keoladeo/Tufted-Duck.jpg"]
+    ]
   },
 
   {
@@ -16,7 +23,14 @@
     "position": {
       "lat": 28.468077,
       "lng": 76.891794
-    }
+    },
+    "images": [
+      ["Common-Hoopoe", "assets/images/Sultanpur/Common-Hoopoe.jpg"],
+      ["Paddyfield-Pipit", "assets/images/Sultanpur/Paddyfield-Pipit.jpg"],
+      ["Purple-Sunbird", "assets/images/Sultanpur/Purple-Sunbird.jpg"],
+      ["Western-Reef-Heron", "assets/images/Sultanpur/Western-Reef-Heron.jpg"],
+      ["White-Throated-Kingfisher", "assets/images/Sultanpur/White-Throated-Kingfisher.jpg"]
+    ]
   },
 
   {
@@ -26,7 +40,13 @@
     "position": {
       "lat": 15.513047,
       "lng": 73.870415
-    }
+    },
+    "images": [
+      ["Little-Bittern", "assets/images/Salim-Ali/Little-Bittern.jpg"],
+      ["Pied-Avocet", "assets/images/Salim-Ali/Pied-Avocet.jpg"],
+      ["Red-Knot", "assets/images/Salim-Ali/Red-Knot.jpg"],
+      ["Striated-Heron", "assets/images/Salim-Ali/Striated-Heron.jpg"]
+    ]
   },
 
   {
@@ -36,7 +56,13 @@
     "position": {
       "lat": 9.631233,
       "lng": 76.419472
-    }
+    },
+    "images": [
+      ["Cuckoo", "assets/images/Kumarakoram/Cuckoo.jpg"],
+      ["Egret", "assets/images/Kumarakoram/Egret.jpg"],
+      ["Moorhen", "assets/images/Kumarakoram/Moorhen.jpg"],
+      ["Owl", "assets/images/Kumarakoram/Owl.jpg"]
+    ]
   },
 
   {
@@ -64,7 +90,13 @@
     "position": {
       "lat": 19.690443,
       "lng": 85.293933
-    }
+    },
+    "images": [
+      ["Sanderling", "assets/images/ChilikaLake/Sanderling.jpg"],
+      ["Northern-Shoveler", "assets/images/ChilikaLake/Northern-Shoveler.jpg"],
+      ["Kentish-Plover", "assets/images/ChilikaLake/Kentish-Plover.jpg"],
+      ["Terek-Sandpiper", "assets/images/ChilikaLake/Terek-Sandpiper.jpg"]
+    ]
   },
 
   {
@@ -74,7 +106,13 @@
     "position": {
       "lat": 22.429317,
       "lng": 88.400685
-    }
+    },
+    "images": [
+      ["Ashy-Drongo", "assets/images/Chintamoni/Ashy-Drongo.jpg"],
+      ["Asian-Koel", "assets/images/Chintamoni/Asian-Koel.jpg"],
+      ["Black-Drongo", "assets/images/Chintamoni/Black-Drongo.jpg"],
+      ["Shikra", "assets/images/Chintamoni/Shikra.jpg"]
+    ]
   },
 
   {
@@ -84,6 +122,12 @@
     "position": {
       "lat": 23.183306,
       "lng": 68.732907
-    }
+    },
+    "images": [
+      ["Flamingo", "assets/images/Kutch-Bustard/Flamingo.jpg"],
+      ["Great-Indian-Bustard", "assets/images/Kutch-Bustard/Great-Indian-Bustard.jpg"],
+      ["Quail", "assets/images/Kutch-Bustard/Quail.jpg"],
+      ["White-Browed-Bush-Chat", "assets/images/Kutch-Bustard/White-Browed-Bush-Chat.jpg"]
+    ]
   }
 ]

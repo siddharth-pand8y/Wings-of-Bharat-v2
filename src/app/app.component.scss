@@ -240,7 +240,7 @@ body {
 }
 
 .listSection {
-  padding: 15px;
+  padding: 15px 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -251,7 +251,8 @@ body {
   box-shadow: 0 2px 12px #00000016;
   transition: all ease-in 0.4s;
   height: fit-content;
-  div {
+  #listSectionDiv {
+    padding: 0 10px;
     h1 {
       font-family: "Playfair Display";
       border-bottom: 1px solid #00ffff;
@@ -353,11 +354,10 @@ body {
   transition: all ease-in 0.2s;
 
   button {
+    margin-left: 15px;
     background: #ffff00;
-    border: 0px;
     border-radius: 4px;
     outline: 0px;
-    box-shadow: 0 0 12px 0px #ffff0090;
     font-family: Quicksand;
     font-weight: 700;
     letter-spacing: 1px;
@@ -376,37 +376,50 @@ body {
     }
   }
   h1 {
-    margin-top: 10px;
     font-family: "Playfair Display";
     border-bottom: 4px solid #9fa8d2;
     font-size: 21px;
     line-height: 35px;
-    margin-right: -15px;
+    margin: 10px 15px 0 15px;
+
   }
   h2 {
     font-family: Quicksand;
     font-size: 15px;
     margin-top: 7px;
     font-weight: 500;
+  margin: 0 15px;
+
   }
-  figure {
-    width: calc(100vw - 30px);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 70px);
-    // flex-direction: row;
-    // justify-content: flex-start;
-    margin: 15px 0;
-    height: 70px;
+
+  div {
+    width: calc(100vw - 15px);
     overflow-x: scroll;
-    img {
-      height: 100%;
-      width: 70px !important;
-      border-radius: 10px;
-      margin: 0 20px 0 0;
-      box-shadow: 0 0 12px #00000017;
+    padding-right: -15px;
+    margin: 0 0 0 15px;
+    figure {
+      width: fit-content;
+      display: flex;
+      // grid-template-columns: repeat(auto-fill, 70px);
+      // grid-gap: 20px;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 15px 0;
+      height: 70px;
+
+      img {
+        height: 70px;
+        width: 70px !important;
+        border-radius: 10px;
+        margin: 0 15px 0 0;
+        box-shadow: 0 0 12px #00000017;
+      }
     }
   }
+
   article {
+  margin: 0 15px;
+
     font-family: "Poppins";
     letter-spacing: 1px;
     line-height: 20px;

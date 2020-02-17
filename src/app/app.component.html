@@ -329,8 +329,9 @@
             id="filter-input"
             class="filter-input"
             placeholder="Search Bird Sanctuaries"
+            [formControl]="searchInput"
           />
-          <button type="submit">X</button>
+          <button type="reset">X</button>
         </form>
         <ul
           [ngClass]="{ hideList: listState === false }"
@@ -454,9 +455,12 @@
         </button>
         <h1>{{ selectedSanctuary.name }}</h1>
         <h2>{{ selectedSanctuary.key }}, India</h2>
+        <div>          
         <figure>
           <img src="{{image[1]}}" alt="{{image[0]}}" *ngFor="let image of selectedSanctuary.images"/>
         </figure>
+      </div>
+
         <article *ngIf="wikipediaAPIStatus === 'Success'">
           {{ SanctuaryAPIData[0].extract }}
         </article>
