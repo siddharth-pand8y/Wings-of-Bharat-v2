@@ -14,6 +14,7 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'wings-of-bharat';
   birdSanctuarySelection = new FormControl('');
+  searchInput = new FormControl('');
   showInfoBox: boolean;
   listState: boolean;
   sactuaryDetail = {};
@@ -58,7 +59,16 @@ export class AppComponent implements OnInit {
   constructor(
     private wikipediaService: WikipediaService,
     private pageTitle: Title
-  ) {}
+  ) {
+    this.searchInput.valueChanges.subscribe(value => {
+      this.birdSanctuaryList =
+        value !== ''
+          ? SanctuaryList.filter(
+              a => a.name.toLowerCase().search(value.toLowerCase()) !== -1
+            )
+          : SanctuaryList;
+    });
+  }
 
   ngOnInit() {
     this.listState = true;
@@ -70,6 +80,10 @@ export class AppComponent implements OnInit {
     this.latitude = 20.593684;
     this.longitude = 78.96288;
     this.zoom = 4;
+  }
+
+  resetSearch() {
+    this.birdSanctuaryList = SanctuaryList;
   }
 
   clickMarker(marker) {
