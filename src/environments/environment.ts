@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   wikipeadiaAPI: 'https://en.wikipedia.org/w/api.php?&origin=*&format=json&action=query&prop=extracts|pageimages|images&exintro=&explaintext=&titles=',
-  googleAPIKey: 'AIzaSyDMIeS-opuQr9l3zodXJlrVG1k9nSrePGI'
+  googleAPIKey: 'API_KEY'
 };
 
 /*
