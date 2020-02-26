@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WikipediaService } from './core/wikipedia/wikipedia.service';
-import { TimelineMax, TimelineLite } from 'gsap';
+// import { TimelineMax, TimelineLite } from 'gsap';
 import SanctuaryList from './../assets/json/location.json';
 import style from './../assets/json/map-style.json';
 import { Title } from '@angular/platform-browser';
@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
   showInfoBox: boolean;
   listState: boolean;
   sactuaryDetail = {};
-  animation = new TimelineMax({ paused: true, reversed: true });
-  ListItemAnimation = new TimelineLite();
+  // animation = new TimelineMax({ paused: true, reversed: true });
+  // ListItemAnimation = new TimelineLite();
   latitude: number;
   longitude: number;
   zoom: number;
@@ -87,7 +87,6 @@ export class AppComponent implements OnInit {
   }
 
   clickMarker(marker) {
-    console.log(marker);
     this.birdSanctuarySelection.setValue(marker.title);
     this.selectSanctuary(marker);
   }
@@ -100,7 +99,6 @@ export class AppComponent implements OnInit {
     this.showInfoBox = true;
     this.selectedSanctuary = sanctuary;
     this.hideList();
-    console.log(this.birdSanctuarySelection.value);
     this.wikipediaAPIStatus = 'Initiated';
     this.wikipediaService
       .getSanctuaryDetails(sanctuary.title)
@@ -112,12 +110,12 @@ export class AppComponent implements OnInit {
   }
 
   ListDropdownAnimation() {
-    this.animation.to(
-      '#seactuaryUnorderedList',
-      0.1,
-      { x: '-100vw', opacity: 0, ease: 'Expo.easeInOut' },
-      0
-    );
+    // this.animation.to(
+    //   '#seactuaryUnorderedList',
+    //   0.1,
+    //   { x: '-100vw', opacity: 0, ease: 'Expo.easeInOut' },
+    //   0
+    // );
   }
 
   collapseList() {
@@ -125,17 +123,17 @@ export class AppComponent implements OnInit {
     if (this.listState === true) {
       this.resetMap();
     }
-    this.animation.reversed()
-      ? this.animation.play()
-      : this.animation.reverse();
+    // this.animation.reversed()
+    //   ? this.animation.play()
+    //   : this.animation.reverse();
     this.listState = !this.listState;
   }
 
   hideList() {
     // this.ListDropdownAnimation();
-    this.animation.reversed()
-      ? this.animation.play()
-      : this.animation.reverse();
+    // this.animation.reversed()
+    //   ? this.animation.play()
+    //   : this.animation.reverse();
   }
 
   showList() {
@@ -143,8 +141,8 @@ export class AppComponent implements OnInit {
     this.pageTitle.setTitle('Wings of Bharat');
     this.listState = true;
     this.showInfoBox = false;
-    this.animation.reversed()
-      ? this.animation.play()
-      : this.animation.reverse();
+    // this.animation.reversed()
+    //   ? this.animation.play()
+    //   : this.animation.reverse();
   }
 }
