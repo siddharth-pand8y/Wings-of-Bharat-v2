@@ -344,6 +344,7 @@ body {
   li {
     display: none;
     margin: 0 !important;
+    transition: all 0.1s ease-in-out;
   }
 }
 
